@@ -14,3 +14,5 @@ Libro  uno=new Libro();// DICHIARAZIONE E ASSEGNAMENTO tramite COSTRUTTORE
 Libro due=new Libro("Il ritorno del re ","Tolkier",1954,1300,17.10f);
 
 Console.WriteLine($"Il libro preferito da {nome} è {due.getTitolo()}");
+foreach (Libro 1 in new Libro[]{uno,due})
+    Console.WriteLine($"\t-(1)");
