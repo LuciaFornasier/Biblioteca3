@@ -39,6 +39,6 @@ public class Libro
     }
     public override string ToString()
     {
-        return $"'{this.titolo}' di {this.autore} ({this.anno}) - {this.pagine} pagine - {this.prezzo} euro";
+       return $"'{this.titolo}' di {this.autore} ({this.anno}) - {this.pagine} pagine - {this.prezzo} euro";
 };
 
