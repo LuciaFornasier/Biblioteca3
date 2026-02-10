@@ -28,6 +28,7 @@ public class Libro
         this.anno = anno;
         this.pagine = pagine;
         this.prezzo = prezzo;
+        autoreLibro.Aggiungi(this);
     }
     /// <summary>
     /// Ritorna il titolo del libro
