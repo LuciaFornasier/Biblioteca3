@@ -22,9 +22,17 @@ public class Autore {
       this.nascita=nascita;
       this.elenco=elenco;
     }
-        public int  Aggiungi(Libro libronuovo){
-        this.libri.Add(libronuovo);
-        return this.libri.Count;
+        public int Aggiungi(Libro libronuovo){
+        this.elenco.Add(libronuovo);
+        return this.elenco.Count;
+    }
+    public String NomeCompleto
+    {
+        get{ return $"{cognome} {nome}";}
+    }
+    public DateTime DataNascita
+    {
+        set{ this.nascita = DateOnly.FromDateTime(value > DateTime.Now ? DateTime.Now : value); }
     }
 };
 
