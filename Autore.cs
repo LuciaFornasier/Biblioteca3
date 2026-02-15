@@ -7,7 +7,7 @@ public class Autore {
         cognome="Specifica un cognome";
         nascita=nascita.Minvalue
     }
-    private list<Libro> libri;
+    
     public Autore(string nome; string cognome; DateOnly nascita){
         this.nome=nome;
         this.cognome=cognome;
@@ -15,9 +15,16 @@ public class Autore {
         this.libro=new list<Libro>;
     
     }
-    public int  Aggiungi(Libro libronuovo){
-        this.libri.Add(libronuovo);
-        return this.libri.Count;
+    
+    using(StreamReader reader =new StreamReader(filePath)){
+        private list<Libro> libri;
+    }
+    using(StreamReader writer = ew StreamWriter(filePath)){
+        public int  Aggiungi(Libro libronuovo)
+        {
+            this.libri.Add(libronuovo);
+            return this.libri.Count;
+        }
     }
 
 }
