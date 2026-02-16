@@ -1,4 +1,4 @@
-//libro titolo, autore, anno, pagine
+// libro titolo, autore, anno, pagine
 public class Libro
 {
     string titolo;
@@ -6,22 +6,24 @@ public class Libro
     int anno;
     int pagine;
     float prezzo;
+
     // Metodi
     /// <summary>
     /// Costruttore di default
     /// </summary>
     public Libro()
     {
-        titolo="Specifica un titolo";
-        autore="Scegli un autore";
-        anno=0;
-        pagine=0;
-        prezzo=0.0f;
+        titolo = "Specifica un titolo";
+        autore = "Scegli un autore";
+        anno = 0;
+        pagine = 0;
+        prezzo = 0.0f;
     }
+
     /// <summary>
     /// Costruttore con parametri
     /// </summary>
-    public Libro(string titolo, string autore, int anno, int pagine,float prezzo)
+    public Libro(string titolo, string autore, int anno, int pagine, float prezzo)
     {
         this.titolo = titolo;
         this.autore = autore;
@@ -29,6 +31,7 @@ public class Libro
         this.pagine = pagine;
         this.prezzo = prezzo;
     }
+
     /// <summary>
     /// Ritorna il titolo del libro
     /// </summary>
@@ -37,9 +40,16 @@ public class Libro
     {
         return this.titolo;
     }
+
     public override string ToString()
     {
         return $"'{this.titolo}' di {this.autore} ({this.anno}) - {this.pagine} pagine - {this.prezzo} euro";
     }
-};
 
+    // 🔹 Proprietà pubbliche per Program.cs
+    public string TitoloPubblico { get { return titolo; } }
+    public string AutoreStr { get { return autore; } }
+    public int AnnoPubblico { get { return anno; } }
+    public int PaginePubbliche { get { return pagine; } }
+    public float PrezzoPubblico { get { return prezzo; } }
+}
