@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\Utente\\OneDrive\\Desktop\\biblioteca\\https---github.com-LuciaFornasier-Biblioteca2\\Biblioteca.csproj": {}
   },
   "projects": {
@@ -12,6 +13,19 @@
         "projectPath": "C:\\Users\\Utente\\OneDrive\\Desktop\\biblioteca\\https---github.com-LuciaFornasier-Biblioteca2\\Biblioteca.csproj",
         "packagesPath": "C:\\Users\\Utente\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Utente\\OneDrive\\Desktop\\biblioteca\\https---github.com-LuciaFornasier-Biblioteca2\\obj\\",
+=======
+    "C:\\Users\\14529993\\RiderProjects\\Biblioteca3\\Biblioteca.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\14529993\\RiderProjects\\Biblioteca3\\Biblioteca.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\14529993\\RiderProjects\\Biblioteca3\\Biblioteca.csproj",
+        "projectName": "Biblioteca",
+        "projectPath": "C:\\Users\\14529993\\RiderProjects\\Biblioteca3\\Biblioteca.csproj",
+        "packagesPath": "C:\\Users\\14529993\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\14529993\\RiderProjects\\Biblioteca3\\obj\\",
+>>>>>>> 3127b98a093eb6cab471e90f4252885eb161bb0f
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Utente\\AppData\\Roaming\\NuGet\\NuGet.Config",

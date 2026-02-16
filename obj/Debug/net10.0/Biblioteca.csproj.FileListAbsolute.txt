@@ -12,6 +12,7 @@ C:\Users\14529993\Biblioteca\obj\Debug\net10.0\refint\Biblioteca.dll
 C:\Users\14529993\Biblioteca\obj\Debug\net10.0\Biblioteca.pdb
 C:\Users\14529993\Biblioteca\obj\Debug\net10.0\Biblioteca.genruntimeconfig.cache
 C:\Users\14529993\Biblioteca\obj\Debug\net10.0\ref\Biblioteca.dll
+<<<<<<< HEAD
 C:\Users\Utente\OneDrive\Desktop\biblioteca\https---github.com-LuciaFornasier-Biblioteca2\obj\Debug\net10.0\Biblioteca.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Utente\OneDrive\Desktop\biblioteca\https---github.com-LuciaFornasier-Biblioteca2\obj\Debug\net10.0\Biblioteca.AssemblyInfoInputs.cache
 C:\Users\Utente\OneDrive\Desktop\biblioteca\https---github.com-LuciaFornasier-Biblioteca2\obj\Debug\net10.0\Biblioteca.AssemblyInfo.cs
@@ -20,3 +21,20 @@ C:\Users\Utente\OneDrive\Desktop\biblioteca\https---github.com-LuciaFornasier-Bi
 C:\Users\Utente\OneDrive\Desktop\biblioteca\https---github.com-LuciaFornasier-Biblioteca2\obj\Debug\net10.0\Biblioteca.dll
 C:\Users\Utente\OneDrive\Desktop\biblioteca\https---github.com-LuciaFornasier-Biblioteca2\obj\Debug\net10.0\refint\Biblioteca.dll
 C:\Users\Utente\OneDrive\Desktop\biblioteca\https---github.com-LuciaFornasier-Biblioteca2\obj\Debug\net10.0\Biblioteca.pdb
+=======
+C:\Users\14529993\Biblioteca\Biblioteca3\bin\Debug\net10.0\Biblioteca.exe
+C:\Users\14529993\Biblioteca\Biblioteca3\bin\Debug\net10.0\Biblioteca.deps.json
+C:\Users\14529993\Biblioteca\Biblioteca3\bin\Debug\net10.0\Biblioteca.runtimeconfig.json
+C:\Users\14529993\Biblioteca\Biblioteca3\bin\Debug\net10.0\Biblioteca.dll
+C:\Users\14529993\Biblioteca\Biblioteca3\bin\Debug\net10.0\Biblioteca.pdb
+C:\Users\14529993\Biblioteca\Biblioteca3\obj\Debug\net10.0\Biblioteca.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\14529993\Biblioteca\Biblioteca3\obj\Debug\net10.0\Biblioteca.AssemblyInfoInputs.cache
+C:\Users\14529993\Biblioteca\Biblioteca3\obj\Debug\net10.0\Biblioteca.AssemblyInfo.cs
+C:\Users\14529993\Biblioteca\Biblioteca3\obj\Debug\net10.0\Biblioteca.csproj.CoreCompileInputs.cache
+C:\Users\14529993\Biblioteca\Biblioteca3\obj\Debug\net10.0\Biblioteca.sourcelink.json
+C:\Users\14529993\Biblioteca\Biblioteca3\obj\Debug\net10.0\Biblioteca.dll
+C:\Users\14529993\Biblioteca\Biblioteca3\obj\Debug\net10.0\refint\Biblioteca.dll
+C:\Users\14529993\Biblioteca\Biblioteca3\obj\Debug\net10.0\Biblioteca.pdb
+C:\Users\14529993\Biblioteca\Biblioteca3\obj\Debug\net10.0\Biblioteca.genruntimeconfig.cache
+C:\Users\14529993\Biblioteca\Biblioteca3\obj\Debug\net10.0\ref\Biblioteca.dll
+>>>>>>> 3127b98a093eb6cab471e90f4252885eb161bb0f

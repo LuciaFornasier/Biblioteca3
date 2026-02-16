@@ -12,11 +12,11 @@ public class Libro
     /// </summary>
     public Libro()
     {
-    titolo="Specifica un titolo";
-    autore="Scegli un autore";
-    anno=0;
-    pagine=0;
-    prezzo=0.0f;
+        titolo="Specifica un titolo";
+        autore="Scegli un autore";
+        anno=0;
+        pagine=0;
+        prezzo=0.0f;
     }
     /// <summary>
     /// Costruttore con parametri
@@ -28,7 +28,6 @@ public class Libro
         this.anno = anno;
         this.pagine = pagine;
         this.prezzo = prezzo;
-        autoreLibro.Aggiungi(this);
     }
     /// <summary>
     /// Ritorna il titolo del libro
@@ -40,6 +39,7 @@ public class Libro
     }
     public override string ToString()
     {
-       return $"'{this.titolo}' di {this.autore} ({this.anno}) - {this.pagine} pagine - {this.prezzo} euro";
+        return $"'{this.titolo}' di {this.autore} ({this.anno}) - {this.pagine} pagine - {this.prezzo} euro";
+    }
 };
 
