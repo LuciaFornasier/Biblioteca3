@@ -16,26 +16,6 @@ public class Autore {
         nascita=DateOnly.MinValue;
         elenco=new List<Libro>();
     }
-<<<<<<< HEAD
-    
-    public Autore(string nome, string cognome, DateOnly nascita){
-        this.nome=nome;
-        this.cognome=cognome;
-        this.nascita=nascita;
-        this.libri=new List<Libro>;
-    
-    }
-    
-        private list<Libro> libri;
-    
-        public int  Aggiungi(Libro libronuovo)
-        {
-            this.libri.Add(libronuovo);
-            return this.libri.Count;
-        }
-
-}
-=======
     public Autore(string nome, string cognome, DateOnly nascita, List<Libro> elenco) {
       this.nome=nome;
       this.cognome=cognome;
@@ -55,7 +35,6 @@ public class Autore {
         set{ this.nascita = DateOnly.FromDateTime(value > DateTime.Now ? DateTime.Now : value); }
     }
 };
->>>>>>> 3127b98a093eb6cab471e90f4252885eb161bb0f
 
 
 
