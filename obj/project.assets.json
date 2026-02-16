@@ -8,24 +8,26 @@
     "net10.0": []
   },
   "packageFolders": {
-    "C:\\Users\\14529993\\.nuget\\packages\\": {}
+    "C:\\Users\\Utente\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\14529993\\Biblioteca\\Biblioteca.csproj",
+      "projectUniqueName": "C:\\Users\\Utente\\OneDrive\\Desktop\\biblioteca\\https---github.com-LuciaFornasier-Biblioteca2\\Biblioteca.csproj",
       "projectName": "Biblioteca",
-      "projectPath": "C:\\Users\\14529993\\Biblioteca\\Biblioteca.csproj",
-      "packagesPath": "C:\\Users\\14529993\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\14529993\\Biblioteca\\obj\\",
+      "projectPath": "C:\\Users\\Utente\\OneDrive\\Desktop\\biblioteca\\https---github.com-LuciaFornasier-Biblioteca2\\Biblioteca.csproj",
+      "packagesPath": "C:\\Users\\Utente\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Utente\\OneDrive\\Desktop\\biblioteca\\https---github.com-LuciaFornasier-Biblioteca2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\14529993\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Utente\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net10.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -65,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Users\\14529993\\dotnet\\sdk\\10.0.102/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
