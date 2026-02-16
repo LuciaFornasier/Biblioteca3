@@ -1,4 +1,4 @@
-﻿
+﻿using System.IO;   
 Console.WriteLine("Hello, World!");
 
 string nome;
@@ -16,9 +16,31 @@ List<Libro> elenco=new List<Libro>();
 elenco.Add(uno);
 elenco.Add(due);
 
+
 Console.WriteLine($"Il libro preferito da {nome} è {due.getTitolo()}");
 int pos=0;
 foreach (Libro l in elenco)
     Console.WriteLine($"\t{pos++} - {l}");
+
+
+string filePath = "libri.txt";
+
+using (StreamWriter writer = new StreamWriter(filePath))
+{
+    foreach (Libro l in elenco)
+    {
+        writer.WriteLine(l.ToString());
+    }
+}
+using (StreamReader reader = new StreamReader(filePath))
+{
+    string linea;
+    Console.WriteLine("\nContenuto del file:");
+    
+    while ((linea = reader.ReadLine()) != null)
+    {
+        Console.WriteLine(linea);
+    }
+}
 
 
