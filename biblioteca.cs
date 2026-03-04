@@ -64,7 +64,7 @@ public class Biblioteca{
             foreach (Autore autore in this.autori)
             {
                 //cognome;nome;genere;nascita
-                streamAutori.WriteLine(autore);
+                streamAutori.WriteLine(autore.DatiCSV);
             }
         }
 
