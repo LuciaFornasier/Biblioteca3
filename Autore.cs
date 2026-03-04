@@ -1,7 +1,27 @@
-namespace Biblioteca;
+using System;
+using System.Collections.Generic;
 
 public class Autore
 {
+    DateOnly nascita;
+    string nome;
+    string cognome;
+    List<Libro> elenco;
+
+    /// <summary>
+    /// Costruttore con nome, cognome e nascita
+    /// </summary>
+    public Autore(string nome, string cognome, DateOnly nascita)
+    {
+        this.nome = nome;
+        this.cognome = cognome;
+        this.nascita = nascita;
+        elenco = new List<Libro>();
+    }
+
+    /// <summary>
+    /// Costruttore di default
+    /// </summary>
     public Autore()
     {
         InitializeComponent();
@@ -18,16 +38,32 @@ public class Autore
             
         }
 
+    /// <summary>
+    /// Ritorna il nome completo
+    /// </summary>
+    public string NomeCompleto
+    {
+        get { return $"{cognome} {nome}"; }
     }
 
-    void button1_Click(object sender, EventArgs e)
+    /// <summary>
+    /// Imposta la data di nascita
+    /// </summary>
+    public DateTime DataNascita
     {
-        
+        set { nascita = DateOnly.FromDateTime(value > DateTime.Now ? DateTime.Now : value); }
     }
 
-    void Button1_Click(object sender, EventArgs e)
+    /// <summary>
+    /// Restituisce la lista dei libri
+    /// </summary>
+    public List<Libro> Elenco
     {
-        textBox1= nome
-        
+        get { return elenco; }
     }
+
+    // 🔹 Proprietà pubbliche per Program.cs
+    public string NomePubblico { get { return nome; } }
+    public string CognomePubblico { get { return cognome; } }
+    public DateOnly NascitaPubblica { get { return nascita; } }
 }
