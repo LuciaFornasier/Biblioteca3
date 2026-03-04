@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="Biblioteca.csproj" />
+  <Folder Name="/Biblioteca3/">
+    <Project Path="Biblioteca3/Biblioteca.csproj" />
+  </Folder>
 </Solution>
