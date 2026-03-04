@@ -48,7 +48,6 @@ if (File.Exists("autori.csv") && File.Exists("libri.csv"))
         {
             Libro l = new Libro(parts[0], autore.NomeCompleto, int.Parse(parts[2]), int.Parse(parts[3]), float.Parse(parts[4]));
             libri.Add(l);
-            autore.Aggiungi(l);
         }
     }
 }
@@ -65,9 +64,6 @@ else
     Libro l2 = new Libro("Harry Potter e la Pietra Filosofale", anna.NomeCompleto, 1997, 223, 22.50f);
     libri.Add(l1);
     libri.Add(l2);
-
-    mario.Aggiungi(l1);
-    anna.Aggiungi(l2);
 }
 
 // Stampa libri

@@ -1,12 +1,10 @@
-using System;
-using System.Collections.Generic;
 
 public class Autore
 {
-    DateOnly nascita;
-    string nome;
-    string cognome;
-    List<Libro> elenco;
+    private DateOnly nascita;
+    private string nome;
+    private string cognome;
+    private List<Libro> elenco;
 
     /// <summary>
     /// Costruttore con nome, cognome e nascita
@@ -24,19 +22,31 @@ public class Autore
     /// </summary>
     public Autore()
     {
-        InitializeComponent();
-        Autore = Biblioteca.CaricaBiblioteca();
-        this.Text = $"Biblioteca'{Autore.Nome}";
-        foreach (Autore autore in new List<Autore>())
-        {
-            string[] labels = autore.items;
-            ListViewItem item = new ListViewItem(){Text = labels[0], Tag = autore};
-            item.SubItems.AddRange(labels.skip(1).ToArray());
-            ListViewAutori.Items.Add(item);
-        }
-        {
-            
-        }
+        nome = "Specifica un nome";
+        cognome = "Specifica un cognome";
+        nascita = DateOnly.MinValue;
+        elenco = new List<Libro>();
+    }
+
+    /// <summary>
+    /// Costruttore con lista di libri
+    /// </summary>
+    public Autore(string nome, string cognome, DateOnly nascita, List<Libro> elenco)
+    {
+        this.nome = nome;
+        this.cognome = cognome;
+        this.nascita = nascita;
+        this.elenco = elenco;
+    }
+
+    /// <summary>
+    /// Aggiunge un libro alla lista e ritorna il numero di libri
+    /// </summary>
+    public int Aggiungi(Libro libronuovo)
+    {
+        this.elenco.Add(libronuovo);
+        return this.elenco.Count;
+    }
 
     /// <summary>
     /// Ritorna il nome completo
@@ -61,9 +71,21 @@ public class Autore
     {
         get { return elenco; }
     }
-
-    // 🔹 Proprietà pubbliche per Program.cs
-    public string NomePubblico { get { return nome; } }
-    public string CognomePubblico { get { return cognome; } }
     public DateOnly NascitaPubblica { get { return nascita; } }
+
+    public override string ToString()
+    {
+        return $"{nome} {cognome} {nascita} {string.Join(", ",elenco)}";
+    }
+    public string[] DatiCSV
+    {
+        get
+        {
+            List<string> dati=new List<string>();
+            dati.Add(this.cognome);
+            dati.Add(this.nome);
+            dati.Add(this.nascita);
+            return dati.ToArray();
+        }
+    }
 }
