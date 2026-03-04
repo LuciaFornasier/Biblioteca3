@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Utente\\RiderProjects\\Biblioteca\\Biblioteca.csproj": {}
+    "C:\\Users\\14529993\\RiderProjects\\Biblioteca3\\Biblioteca.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Utente\\RiderProjects\\Biblioteca\\Biblioteca.csproj": {
+    "C:\\Users\\14529993\\RiderProjects\\Biblioteca3\\Biblioteca.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Utente\\RiderProjects\\Biblioteca\\Biblioteca.csproj",
+        "projectUniqueName": "C:\\Users\\14529993\\RiderProjects\\Biblioteca3\\Biblioteca.csproj",
         "projectName": "Biblioteca",
-        "projectPath": "C:\\Users\\Utente\\RiderProjects\\Biblioteca\\Biblioteca.csproj",
-        "packagesPath": "C:\\Users\\Utente\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Utente\\RiderProjects\\Biblioteca\\obj\\",
+        "projectPath": "C:\\Users\\14529993\\RiderProjects\\Biblioteca3\\Biblioteca.csproj",
+        "packagesPath": "C:\\Users\\14529993\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\14529993\\RiderProjects\\Biblioteca3\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Utente\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\14529993\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -61,7 +65,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Users\\14529993\\.dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.CSharp": "(,4.7.32767]",
             "Microsoft.VisualBasic": "(,10.4.32767]",

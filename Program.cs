@@ -2,8 +2,7 @@
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
-
-Console.WriteLine("Hello, World!");
+using System.Runtime.CompilerServices;
 
 // Nome dell'utente
 string nome;
@@ -76,16 +75,3 @@ int pos = 0;
 foreach (var l in libri)
     Console.WriteLine($"{pos++} - {l}");
 
-// Salvataggio CSV autori
-using (StreamWriter sw = new StreamWriter("autori.csv"))
-{
-    foreach (var a in autori)
-        sw.WriteLine($"{a.CognomePubblico};{a.NomePubblico};{a.NascitaPubblica:yyyyMMdd}");
-}
-
-// Salvataggio CSV libri
-using (StreamWriter sw = new StreamWriter("libri.csv"))
-{
-    foreach (var l in libri)
-        sw.WriteLine($"{l.TitoloPubblico};{l.AutoreStr};{l.AnnoPubblico};{l.PaginePubbliche};{l.PrezzoPubblico}");
-}

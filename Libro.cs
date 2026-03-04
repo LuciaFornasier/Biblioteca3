@@ -1,3 +1,4 @@
+
 // libro titolo, autore, anno, pagine
 public class Libro
 {
@@ -38,16 +39,14 @@ public class Libro
     /// <returns>Il titolo</returns>
     public string getTitolo()
     {
-        return this.titolo;
+        return titolo;
     }
 
     public override string ToString()
     {
-        return $"'{this.titolo}' di {this.autore} ({this.anno}) - {this.pagine} pagine - {this.prezzo} euro";
+        return $"'{titolo}' di {autore} ({anno}) - {pagine} pagine - {prezzo} euro";
     }
-
-    // 🔹 Proprietà pubbliche per Program.cs
-    public string TitoloPubblico { get { return titolo; } }
+    
     public string AutoreStr { get { return autore; } }
     public int AnnoPubblico { get { return anno; } }
     public int PaginePubbliche { get { return pagine; } }

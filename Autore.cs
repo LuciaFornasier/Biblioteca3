@@ -1,12 +1,10 @@
-using System;
-using System.Collections.Generic;
 
 public class Autore
 {
-    DateOnly nascita;
-    string nome;
-    string cognome;
-    List<Libro> elenco;
+    private DateOnly nascita;
+    private string nome;
+    private string cognome;
+    private List<Libro> elenco;
 
     /// <summary>
     /// Costruttore con nome, cognome e nascita
@@ -38,7 +36,7 @@ public class Autore
         this.nome = nome;
         this.cognome = cognome;
         this.nascita = nascita;
-        this.elenco = elenco ?? new List<Libro>();
+        this.elenco = elenco;
     }
 
     /// <summary>
@@ -73,9 +71,21 @@ public class Autore
     {
         get { return elenco; }
     }
-
-    // 🔹 Proprietà pubbliche per Program.cs
-    public string NomePubblico { get { return nome; } }
-    public string CognomePubblico { get { return cognome; } }
     public DateOnly NascitaPubblica { get { return nascita; } }
+
+    public override string ToString()
+    {
+        return $"{nome} {cognome} {nascita} {string.Join(", ",elenco)}";
+    }
+    public string[] DatiCSV
+    {
+        get
+        {
+            List<string> dati=new List<>();
+            dati.add(this.cognome);
+            dati.add(this.nome);
+            dati.add(this.nascita);
+            return dati.toArray();
+        }
+    }
 }
