@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Biblioteca", "..\..\OneDrive\Documenti\Lucia\Biblioteca3\Biblioteca.csproj", "{DFAD8832-A1E4-45A2-8E18-B4830828B89F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinFormsApp1", "WinFormsApp1\WinFormsApp1.csproj", "{318FB1A7-767B-4378-B4AF-407B7C006DB9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DFAD8832-A1E4-45A2-8E18-B4830828B89F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DFAD8832-A1E4-45A2-8E18-B4830828B89F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DFAD8832-A1E4-45A2-8E18-B4830828B89F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DFAD8832-A1E4-45A2-8E18-B4830828B89F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{318FB1A7-767B-4378-B4AF-407B7C006DB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{318FB1A7-767B-4378-B4AF-407B7C006DB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{318FB1A7-767B-4378-B4AF-407B7C006DB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{318FB1A7-767B-4378-B4AF-407B7C006DB9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
