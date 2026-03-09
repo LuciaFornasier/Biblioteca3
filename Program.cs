@@ -2,7 +2,8 @@
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.CompilerServices;
+
+Console.WriteLine("Hello, World!");
 
 // Nome dell'utente
 string nome;
@@ -48,6 +49,7 @@ if (File.Exists("autori.csv") && File.Exists("libri.csv"))
         {
             Libro l = new Libro(parts[0], autore.NomeCompleto, int.Parse(parts[2]), int.Parse(parts[3]), float.Parse(parts[4]));
             libri.Add(l);
+            autore.Aggiungi(l);
         }
     }
 }
@@ -64,6 +66,9 @@ else
     Libro l2 = new Libro("Harry Potter e la Pietra Filosofale", anna.NomeCompleto, 1997, 223, 22.50f);
     libri.Add(l1);
     libri.Add(l2);
+
+    mario.Aggiungi(l1);
+    anna.Aggiungi(l2);
 }
 
 // Stampa libri
@@ -71,3 +76,16 @@ int pos = 0;
 foreach (var l in libri)
     Console.WriteLine($"{pos++} - {l}");
 
+// Salvataggio CSV autori
+using (StreamWriter sw = new StreamWriter("autori.csv"))
+{
+    foreach (var a in autori)
+        sw.WriteLine($"{a.CognomePubblico};{a.NomePubblico};{a.NascitaPubblica:yyyyMMdd}");
+}
+
+// Salvataggio CSV libri
+using (StreamWriter sw = new StreamWriter("libri.csv"))
+{
+    foreach (var l in libri)
+        sw.WriteLine($"{l.TitoloPubblico};{l.AutoreStr};{l.AnnoPubblico};{l.PaginePubbliche};{l.PrezzoPubblico}");
+}
