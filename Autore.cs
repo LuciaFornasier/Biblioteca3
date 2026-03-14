@@ -50,9 +50,20 @@ public class Autore
         get { return elenco; }
     }
 
-    public DateOnly NascitaPubblica { get { return nascita; } }
-    public string NomePubblico { get { return nome; } }
-    public string CognomePubblico { get { return cognome; } }
+    public DateOnly NascitaPubblica
+    {
+        get { return nascita; }
+    }
+
+    public string NomePubblico
+    {
+        get { return nome; }
+    }
+
+    public string CognomePubblico
+    {
+        get { return cognome; }
+    }
 
     public override string ToString()
     {
@@ -70,4 +81,5 @@ public class Autore
             return dati.ToArray();
         }
     }
+
 }

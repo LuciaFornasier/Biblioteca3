@@ -79,4 +79,37 @@ public class Biblioteca{
         return docPath;
 
     }
+    public int CaricaCSV(string filePath)
+    {
+        using (StreamReader reader = new StreamReader(filePath))
+        {
+            string[] fields;
+            string[] autori;
+            string line;
+            Autore autore;
+            Libro libro;
+            int anno;
+            int pagine;
+
+            Console.WriteLine($"Testata:{reader.ReadLine()}");
+            while (!reader.EndOfStream)
+            {
+                line = reader.ReadLine()??""; 
+                fields = line.Split(',');
+                if ((line.Length == 0) || (fields.Length < 4))
+                {
+                    Console.WriteLine($"Errore:{line}");
+                    continue;
+                }
+
+                autori = fields[2].Split("#");
+                autore = new Autore(autori[0].Trim(), autori.Length>1 ? autori[1].Trim() : "" );
+            }
+            {
+                
+            }
+        }
+    }
+
+
 }
