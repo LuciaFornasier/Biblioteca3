@@ -5,7 +5,7 @@ public class Libro
     int anno;
     int pagine;
     float prezzo;
-
+ 
     public Libro()
     {
         titolo = "Specifica un titolo";
@@ -14,7 +14,7 @@ public class Libro
         pagine = 0;
         prezzo = 0.0f;
     }
-
+ 
     public Libro(string titolo, string autore, int anno, int pagine, float prezzo)
     {
         this.titolo = titolo;
@@ -23,17 +23,23 @@ public class Libro
         this.pagine = pagine;
         this.prezzo = prezzo;
     }
-
+ 
     public string getTitolo() { return titolo; }
-
+ 
     public override string ToString()
     {
         return $"'{titolo}' di {autore} ({anno}) - {pagine} pagine - {prezzo} euro";
     }
-
-    public string TitoloPubblico { get { return titolo; } }
-    public string AutoreStr { get { return autore; } }
-    public int AnnoPubblico { get { return anno; } }
-    public int PaginePubbliche { get { return pagine; } }
-    public float PrezzoPubblico { get { return prezzo; } }
+ 
+    public string TitoloPubblico   { get { return titolo; } }
+    public string AutoreStr        { get { return autore; } }
+    public int    AnnoPubblico     { get { return anno;   } }
+    public int    PaginePubbliche  { get { return pagine; } }
+    public float  PrezzoPubblico   { get { return prezzo; } }
+ 
+    
+    public string RigaCSV
+    {
+        get { return $"{titolo};{autore};{anno};{pagine}"; }
+    }
 }
