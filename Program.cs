@@ -5,46 +5,49 @@ using System.Linq;
 
 Console.WriteLine("Hello, World!");
 
-string nome = "lucia";
+// Nome dell'utente
+string nome;
+nome = "lucia";
 
-Libro uno = new Libro();
+/*
+Libro:classe
+libro():costruttore di default(==senza parametri) della classe libro
+uno: istanza della classe libro noto come OGGETTO cioè una VARIABILE DI TIPO LIBRO (CLASSE)
+*/
+
+// Creazione libri
+Libro uno = new Libro(); // DICHIARAZIONE E ASSEGNAMENTO tramite COSTRUTTORE
 Libro due = new Libro("Il ritorno del re", "Tolkien", 1954, 1300, 17.10f);
+
+// Lista libri
+List<Libro> elenco = new List<Libro>();
+elenco.Add(uno);
+elenco.Add(due);
+
 Console.WriteLine($"Il libro preferito da {nome} è {due.getTitolo()}");
 
+// Liste autori e libri
 List<Autore> autori = new List<Autore>();
-List<Libro>  libri  = new List<Libro>();
+List<Libro> libri = new List<Libro>();
 
-string percorso   = Directory.GetCurrentDirectory();
-string autoriPath = Path.Combine(percorso, "autori.csv");
-string libriPath  = Path.Combine(percorso, "libri.csv");
-
-if (File.Exists(autoriPath) && File.Exists(libriPath))
+// Controllo se i CSV esistono
+if (File.Exists("autori.csv") && File.Exists("libri.csv"))
 {
-    using (StreamReader reader = new StreamReader(autoriPath))
+    foreach (var line in File.ReadAllLines("autori.csv"))
     {
-        reader.ReadLine();
-        while (!reader.EndOfStream)
-        {
-            string line     = reader.ReadLine() ?? "";
-            string[] fields = line.Split(';');
-            if (line.Length == 0 || fields.Length < 2) continue;
-            Autore a = new Autore();
-            a.DaCSV = line;
-            autori.Add(a);
-        }
+        var parts = line.Split(';');
+        DateOnly nascita = DateOnly.ParseExact(parts[2], "yyyyMMdd");
+        Autore a = new Autore(parts[1], parts[0], nascita);
+        autori.Add(a);
     }
 
-    using (StreamReader reader = new StreamReader(libriPath))
+    foreach (var line in File.ReadAllLines("libri.csv"))
     {
-        reader.ReadLine();
-        while (!reader.EndOfStream)
+        var parts = line.Split(';');
+        var autore = autori.FirstOrDefault(x => x.NomeCompleto == parts[1]);
+        if (autore != null)
         {
-            string line     = reader.ReadLine() ?? "";
-            string[] fields = line.Split(';');
-            if (line.Length == 0 || fields.Length < 4) continue;
-            Autore? autore = autori.FirstOrDefault(a => a.NomeCompleto == fields[1].Trim());
-            if (autore == null) continue;
-            Libro l = new Libro(fields[0].Trim(), autore.NomeCompleto, int.Parse(fields[2]), int.Parse(fields[3]), 0f);
+            Libro l = new Libro(parts[0], autore.NomeCompleto, int.Parse(parts[2]), int.Parse(parts[3]), float.Parse(parts[4]));
             libri.Add(l);
             autore.Aggiungi(l);
         }
@@ -52,39 +55,37 @@ if (File.Exists(autoriPath) && File.Exists(libriPath))
 }
 else
 {
+    // Creazione autori se file assenti
     Autore mario = new Autore("Mario", "Rossi", DateOnly.ParseExact("19850512", "yyyyMMdd"));
-    Autore anna  = new Autore("Anna",  "Bianchi", DateOnly.ParseExact("19900220", "yyyyMMdd"));
-    mario.GenerePubblico = "M";
-    anna.GenerePubblico  = "F";
+    Autore anna = new Autore("Anna", "Bianchi", DateOnly.ParseExact("19900220", "yyyyMMdd"));
+    autori.Add(mario);
+    autori.Add(anna);
 
-    Libro l1 = new Libro("Il ritorno del re",                   mario.NomeCompleto, 1954, 1300, 17.10f);
-    Libro l2 = new Libro("Harry Potter e la Pietra Filosofale", anna.NomeCompleto,  1997,  223, 22.50f);
+    // Creazione libri
+    Libro l1 = new Libro("Il ritorno del re", mario.NomeCompleto, 1954, 1300, 17.10f);
+    Libro l2 = new Libro("Harry Potter e la Pietra Filosofale", anna.NomeCompleto, 1997, 223, 22.50f);
+    libri.Add(l1);
+    libri.Add(l2);
 
     mario.Aggiungi(l1);
     anna.Aggiungi(l2);
-
-    autori.Add(mario);
-    autori.Add(anna);
-    libri.Add(l1);
-    libri.Add(l2);
 }
 
+// Stampa libri
 int pos = 0;
 foreach (var l in libri)
     Console.WriteLine($"{pos++} - {l}");
 
-using (StreamWriter sw = new StreamWriter(autoriPath))
+// Salvataggio CSV autori
+using (StreamWriter sw = new StreamWriter("autori.csv"))
 {
-    sw.WriteLine("cognome;nome;genere;nascita");
-    foreach (Autore a in autori)
-        sw.WriteLine(a.RigaCSV);
+    foreach (var a in autori)
+        sw.WriteLine($"{a.CognomePubblico};{a.NomePubblico};{a.NascitaPubblica:yyyyMMdd}");
 }
 
-using (StreamWriter sw = new StreamWriter(libriPath))
+// Salvataggio CSV libri
+using (StreamWriter sw = new StreamWriter("libri.csv"))
 {
-    sw.WriteLine("titolo;autore;anno;pagine");
-    foreach (Libro l in libri)
-        sw.WriteLine(l.RigaCSV);
+    foreach (var l in libri)
+        sw.WriteLine($"{l.TitoloPubblico};{l.AutoreStr};{l.AnnoPubblico};{l.PaginePubbliche};{l.PrezzoPubblico}");
 }
-
-Console.WriteLine($"File salvati in: {percorso}");
