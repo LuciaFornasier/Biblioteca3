@@ -11,28 +11,17 @@ public class Autore
         this.nome = nome;
         this.cognome = cognome;
         this.nascita = nascita;
-        this.genere = "";
-        elenco = new List<Libro>();
+        this.genere = genere;
+        this.elenco = elenco;
     }
     public Autore()
     {
-        this.nome="";
-        this.cognome = "";
-        this.nascita =DateOnly.MinValue();
-        this.genere = "";
+        nome="";
+        cognome = "";
+        nascita =DateOnly.MinValue();
+        genere = "";
         elenco = new List<Libro>();
     }
-
- 
-    public Autore(string nome, string cognome, DateTime nascita, List<Libro> elenco, string genere)
-    {
-        this.nome = nome;
-        this.cognome = cognome;
-        this.nascita = nascita;
-        this.genere = "";
-        this.elenco = elenco;
-    }
- 
     public int Aggiungi(Libro libronuovo)
     {
         this.elenco.Add(libronuovo);

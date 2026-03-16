@@ -17,7 +17,10 @@ public class Biblioteca
 
     public Biblioteca()
     {
-        autori=
+        autori = new List<Autore>();
+        libri = new List<Libro>();
+        nome = "";
+
     }
 
     public override string ToString()
@@ -206,7 +209,7 @@ public class Biblioteca
                 {
                     if(string.Compare(autori[h].NomeCompleto>autori[h+1].NomeCompleto)
                     {
-                        
+                        Swap(ref autori[h].NomeCompleto,ref autori[h+1].NomeCompleto)
                     }
                 }
             }
