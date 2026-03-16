@@ -80,8 +80,8 @@ public class Autore
     }
  
     public override string ToString()
-    {
-        return $"{nome} {cognome} ({nascita})";
+    { 
+        return $"{nome}, {cognome} ,{nascita}";
     }
     
     public string RigaCSV
@@ -92,24 +92,6 @@ public class Autore
             return $"{cognome};{nome};{genere};{dataNascita}";
         }
     }
- 
-    
-    public string DaCSV
-    {
-        set
-        {
-            string[] campi = value.Split(';');
-            if (campi.Length < 2) return;
-            cognome = campi[0].Trim();
-            nome    = campi[1].Trim();
-            genere  = campi.Length > 2 ? campi[2].Trim() : "";
-            nascita = campi.Length > 3 && !string.IsNullOrWhiteSpace(campi[3])
-                ? DateOnly.ParseExact(campi[3].Trim(), "yyyyMMdd")
-                : DateOnly.MinValue;
-        }
-    }
- 
-    
     public string[] DatiCSV
     {
         get { return RigaCSV.Split(';'); }

@@ -6,12 +6,18 @@ namespace biblioteca;
 public class Biblioteca
 {
     private string nome;
-    private List<Autore> autori = new List<Autore>();
-    private List<Libro> libri = new List<Libro>();
-
+    private List<Autore> autori;
+    private List<Libro> libri;
     public Biblioteca(string nomeBiblioteca)
     {
         this.nome = nomeBiblioteca;
+        this.libri = libri;
+        this.autori = autori;
+    }
+
+    public Biblioteca()
+    {
+        autori=
     }
 
     public override string ToString()
@@ -108,7 +114,7 @@ public class Biblioteca
 
 
                 Autore autore = new Autore();
-                autore.DaCSV = line;
+                autore= line;
                 this.AggiungiAutore(autore);
             }
         }
@@ -189,6 +195,22 @@ public class Biblioteca
         }
 
         return (errori.Count == 0, errori);
+    }
+
+    public string Ordinamento {
+        get
+        {
+            for(int i=0; i<this.autori.Count-1;i++)
+            {
+                for (int h = 0; h < this.autori.Count-1; h++)
+                {
+                    if(string.Compare(autori[h].NomeCompleto>autori[h+1].NomeCompleto)
+                    {
+                        
+                    }
+                }
+            }
+        }
     }
 }
 
