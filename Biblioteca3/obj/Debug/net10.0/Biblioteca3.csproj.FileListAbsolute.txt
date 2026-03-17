@@ -1,0 +1,5 @@
+C:\Users\Utente\RiderProjects\biblioteca3\obj\Debug\net10.0\Biblioteca3.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Utente\RiderProjects\biblioteca3\obj\Debug\net10.0\Biblioteca3.AssemblyInfoInputs.cache
+C:\Users\Utente\RiderProjects\biblioteca3\obj\Debug\net10.0\Biblioteca3.AssemblyInfo.cs
+C:\Users\Utente\RiderProjects\biblioteca3\obj\Debug\net10.0\Biblioteca3.csproj.CoreCompileInputs.cache
+C:\Users\Utente\RiderProjects\biblioteca3\obj\Debug\net10.0\Biblioteca3.sourcelink.json

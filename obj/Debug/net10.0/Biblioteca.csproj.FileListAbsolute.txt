@@ -1,0 +1,6 @@
+C:\Users\Utente\RiderProjects\Biblioteca\obj\Debug\net10.0\BIbliotecaForm.BibliotecaForm.resources
+C:\Users\Utente\RiderProjects\Biblioteca\obj\Debug\net10.0\Biblioteca.csproj.GenerateResource.cache
+C:\Users\Utente\RiderProjects\Biblioteca\obj\Debug\net10.0\Biblioteca.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Utente\RiderProjects\Biblioteca\obj\Debug\net10.0\Biblioteca.AssemblyInfoInputs.cache
+C:\Users\Utente\RiderProjects\Biblioteca\obj\Debug\net10.0\Biblioteca.AssemblyInfo.cs
+C:\Users\Utente\RiderProjects\Biblioteca\obj\Debug\net10.0\Biblioteca.csproj.CoreCompileInputs.cache
