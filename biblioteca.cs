@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 namespace biblioteca;
-public class Biblioteca{
+
+public class Biblioteca
+{
     private string nome;
     private List<Autore> autori = new List<Autore>();
     private List<Libro> libri = new List<Libro>();
@@ -58,7 +60,7 @@ public class Biblioteca{
     {
         string docPath =
             Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-        
+
         using (StreamWriter streamAutori = new StreamWriter(Path.Combine(docPath, "Autori.csv")))
         {
             foreach (Autore autore in this.autori)
@@ -68,7 +70,7 @@ public class Biblioteca{
             }
         }
 
-        using (StreamWriter streamLibri = new StreamWriter( Path.Combine(docPath,"libri.csv")))
+        using (StreamWriter streamLibri = new StreamWriter(Path.Combine(docPath, "libri.csv")))
         {
             foreach (Libro libro in this.libri)
             {
@@ -76,9 +78,11 @@ public class Biblioteca{
                 streamLibri.WriteLine(libro);
             }
         }
+
         return docPath;
 
     }
+
     public Autore[] CaricaCSV(string filePath)
     {
         List<Autore> autori = new List<Autore>();
@@ -111,8 +115,38 @@ public class Biblioteca{
                 autori.Add(autore);
             }
         }
+
         return autori.ToArray();
     }
+    public static Biblioteca CaricaBiblioteca()
+    {
+        Biblioteca b = new Biblioteca("Lucy");
 
+        Autore mario = new Autore("Mario", "Rossi", new DateOnly(1985, 5, 12));
+        Autore joanne = new Autore("Joanne", "Rowling", new DateOnly(1965, 7, 31));
+        Autore tolkien = new Autore("John", "Tolkien", new DateOnly(1892, 1, 3));
 
+        b.AggiungiAutore(mario);
+        b.AggiungiAutore(joanne);
+        b.AggiungiAutore(tolkien);
+
+        Libro l1 = new Libro("Il ritorno del re", tolkien.NomeCompleto, 1954, 1300, 17.10f);
+        Libro l2 = new Libro("Harry Potter e la Pietra Filosofale", joanne.NomeCompleto, 1997, 223, 22.50f);
+        Libro l3 = new Libro("Manuale di Programmazione", mario.NomeCompleto, 2020, 350, 25.00f);
+
+        tolkien.Aggiungi(l1);
+        joanne.Aggiungi(l2);
+        mario.Aggiungi(l3);
+
+        b.AggiungiLibro(l1);
+        b.AggiungiLibro(l2);
+        b.AggiungiLibro(l3);
+
+        return b;
+    }
+    public string Nome
+    {
+        get { return nome; }
+    }
+    
 }

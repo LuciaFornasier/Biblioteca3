@@ -1,16 +1,20 @@
+using System.Drawing;
+
 public class Autore
 {
     private DateOnly nascita;
     private string nome;
     private string cognome;
     private List<Libro> elenco;
+    
 
-    public Autore(string nome, string cognome, DateOnly nascita)
+    public Autore(string nome, string cognome, DateOnly nascita,List<Libro> elenco, int totlibri)
     {
         this.nome = nome;
         this.cognome = cognome;
         this.nascita = nascita;
-        elenco = new List<Libro>();
+        this.elenco = elenco;
+        
     }
 
     public Autore()
@@ -19,13 +23,12 @@ public class Autore
         cognome = "Specifica un cognome";
         nascita = DateOnly.MinValue;
         elenco = new List<Libro>();
+        
     }
-    public Autore(string nome, string cognome)
+    public Autore(string nome, string cognome, DateOnly dateOnly)
     {
         this.nome = nome;
         this.cognome = cognome;
-        nascita = DateOnly.MinValue;
-        elenco = new List<Libro>();
     }
 
     public Autore(string nome, string cognome, DateOnly nascita, List<Libro> elenco)
@@ -77,6 +80,15 @@ public class Autore
         return $"{nome} {cognome} {nascita} {string.Join(", ", elenco)}";
     }
 
+    public int Totlibri
+    {
+        get
+        {
+            // conta solo i libri il cui autore è questo
+            return elenco.Count(l => l.Autore== this);
+        }
+    }  
+
     public string[] DatiCSV
     {
         get
@@ -85,8 +97,8 @@ public class Autore
             dati.Add(this.cognome);
             dati.Add(this.nome);
             dati.Add(this.nascita.ToString("yyyyMMdd"));
+            dati.Add(Totlibri.ToString());
             return dati.ToArray();
         }
     }
-
 }

@@ -1,7 +1,7 @@
 public class Libro
 {
     string titolo;
-    string autore;
+    Autore autore;
     int anno;
     int pagine;
     float prezzo;
@@ -9,13 +9,13 @@ public class Libro
     public Libro()
     {
         titolo = "Specifica un titolo";
-        autore = "Scegli un autore";
+        autore = new Autore();
         anno = 0;
         pagine = 0;
         prezzo = 0.0f;
     }
  
-    public Libro(string titolo, string autore, int anno, int pagine, float prezzo)
+    public Libro(string titolo, Autore autore, int anno, int pagine, float prezzo)
     {
         this.titolo = titolo;
         this.autore = autore;
@@ -23,7 +23,7 @@ public class Libro
         this.pagine = pagine;
         this.prezzo = prezzo;
     }
- 
+
     public string getTitolo() { return titolo; }
  
     public override string ToString()
@@ -32,7 +32,7 @@ public class Libro
     }
  
     public string TitoloPubblico   { get { return titolo; } }
-    public string AutoreStr        { get { return autore; } }
+    public Autore Autore       { get { return autore; } }
     public int    AnnoPubblico     { get { return anno;   } }
     public int    PaginePubbliche  { get { return pagine; } }
     public float  PrezzoPubblico   { get { return prezzo; } }
