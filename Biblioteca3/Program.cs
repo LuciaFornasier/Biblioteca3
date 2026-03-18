@@ -31,20 +31,20 @@ if (File.Exists("autori.csv") && File.Exists("libri.csv"))
     {
         var parts = line.Split(';');
 
-         Autore? autore = autori.FirstOrDefault(x => x.NomeCompleto == parts[0]);
+         Autore? autor = autori.FirstOrDefault(x => x.NomeCompleto == parts[0]);
 
-        if (autore != null)
+        if (autor != null)
         {
             Libro l = new Libro(
                 parts[0],
-                autore.NomeCompleto,
+                autor,
                 int.Parse(parts[2]),
                 int.Parse(parts[3]),
                 float.Parse(parts[4], CultureInfo.InvariantCulture)
             );
 
             libri.Add(l);
-            autore.Aggiungi(l);
+            autor.Aggiungi(l);
         }
     }
 }
@@ -80,3 +80,9 @@ using (StreamWriter sw = new StreamWriter("libri.csv"))
         sw.WriteLine($"{l.TitoloPubblico};{l.Autore};{l.AnnoPubblico};{l.PaginePubbliche};{l.PrezzoPubblico}");
     }
 }
+Biblioteca b = Biblioteca.CaricaBiblioteca();
+
+// Versione void
+b.CercaAutore(b. "Harry", out string autore);
+if (autore != "")
+    Console.WriteLine($"Autore: {autore}");

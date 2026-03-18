@@ -1,10 +1,10 @@
 public class Libro
 {
-    string titolo;
-    Autore autore;
-    int anno;
-    int pagine;
-    float prezzo;
+    private string titolo;
+    private Autore autore;
+    private int anno;
+    private int pagine;
+    private float prezzo;
  
     public Libro()
     {
@@ -36,7 +36,7 @@ public class Libro
     public int    AnnoPubblico     { get { return anno;   } }
     public int    PaginePubbliche  { get { return pagine; } }
     public float  PrezzoPubblico   { get { return prezzo; } }
- 
+    public string NomeCompleto { get { return autore.NomeCompleto; } }
     
     public string RigaCSV
     {

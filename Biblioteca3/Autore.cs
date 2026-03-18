@@ -29,6 +29,15 @@ public class Autore
     {
         this.nome = nome;
         this.cognome = cognome;
+        this.nascita = nascita;      
+        this.elenco = new List<Libro>();
+    }
+    public Autore(string nome, string cognome)
+    {
+        this.nome = nome;
+        this.cognome = cognome;
+        this.nascita = nascita;      
+        this.elenco = new List<Libro>();
     }
 
     public Autore(string nome, string cognome, DateOnly nascita, List<Libro> elenco)
@@ -88,6 +97,7 @@ public class Autore
             return elenco.Count(l => l.Autore== this);
         }
     }  
+    
 
     public string[] DatiCSV
     {
