@@ -81,7 +81,7 @@ public class Autore
 
     public string CognomePubblico
     {
-        get { return cognome; }
+        get { return cognome; }j
     }
 
     public override string ToString()
