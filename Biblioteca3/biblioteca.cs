@@ -151,7 +151,7 @@ public class Biblioteca
         get { return nome; }
     }
 
-    public List<string> libriAutori(List<Libro> libri, out List<string> k)
+   /* public List<string> libriAutori(List<Libro> libri, out List<string> k)
     {
         k = new List<string>();
         foreach (Libro l in libri)

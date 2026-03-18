@@ -28,7 +28,7 @@ public class Libro
  
     public override string ToString()
     {
-        return $"'{titolo}' di {autore} ({anno}) - {pagine} pagine - {prezzo} euro";
+        return $"'{titolo}' di {autore.NomeCompleto} ({anno}) - {pagine} pagine - {prezzo} euro";
     }
  
     public string TitoloPubblico   { get { return titolo; } }
