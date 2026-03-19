@@ -151,57 +151,126 @@ public class Biblioteca
         get { return nome; }
     }
 
-   /* public List<string> libriAutori(List<Libro> libri, out List<string> k)
+    public List<Libro> TrovaLibriAutore(List<Autore> autori, string nomeAutore)
     {
-        k = new List<string>();
-        foreach (Libro l in libri)
-        {
-            if (string.Compare(l.Autore.NomeCompleto, autori.NomeCompleto))
-            {
-                k.Add(l.Autore.NomeCompleto);
-            }
+        CercaAutore(autori, nomeAutore, out string? nomeRisultato);
 
-        }
+        if (nomeRisultato == null)
+            return new List<Libro>(); // Autore non trovato, lista vuota
 
-        return k;
+        Autore autore = autori.First(a =>
+            string.Equals(a.NomeCompleto, nomeRisultato, StringComparison.OrdinalIgnoreCase));
+
+        return autore.Elenco ?? new List<Libro>();
     }
 
-    public bool OttieniinfoAutore(string autore, out int totlibri, out string UltimoTitolo)
+    public void OrdinaPerTitolo(List<Libro> Libri, out List<Libro> ordina)
     {
-        Autore a = ;
-        Libro lib = a.Totlibri.Last;
-        List<Autore> l = libriAutori();
-        if (l.Count == 0)
-        {
-            totlibri = 0;
-            UltimoTitolo = null;
-            return false;
-        }
+        ordina = null;
+        ordina=libri.OrderBy(a => a.TitoloPubblico).ToList();
+        return;
+    }
 
-        totlibri = l[0].libri.Count;
-        UltimoTitolo = l[0].libri[0].Titolo;
+    public bool OttieniInfoAutore(string nomeAutore, List<Autore> autori, out int totLibri, out string ultimoTitolo)
+    {
+        totLibri = 0;
+        ultimoTitolo = null;
+        List<Libro> libriAutore = TrovaLibriAutore(autori, nomeAutore);
+
+        if (libriAutore.Count == 0)
+            return false;
+
+        Libro ultimoLibro = libriAutore
+            .OrderBy(l => l.AnnoPubblico)
+            .Last();
+
+        totLibri = libriAutore.Count;
+        ultimoTitolo = ultimoLibro.TitoloPubblico;
+
         return true;
     }
 
-    public int VerificaDisponibilita(List<Libro> libri, string titolo, out int pos, out bool piùcopie)
+    public int VerificaDisponibilita(List<Libro> libriOrdinati, string titolo, out int pos, out bool piuCopie)
     {
+        pos = -1;
+        piuCopie = false;
+        int copie = 0;
 
-        for (int i = 0; i < libri.Count; i++)
+        for (int i = 0; i < libriOrdinati.Count; i++)
         {
-            if (libri.TitoloPubblico == titolo)
+            if (libriOrdinati[i].TitoloPubblico == titolo)
             {
+                if (pos == -1)
+                    pos = i; 
 
+                copie++;
             }
         }
+
+        if (copie == 0)
+            return 0; 
+
+        piuCopie = copie > 1;
+        return copie;
     }
 
-  /*  public CercaRangeDecennio(List<Libro> libri)
+    public bool CercaRangeDecennio(List<Libro> libriOrdinati, int inizioDecennio, out Libro primo, out Libro ultimo)
     {
+        primo = null;
+        ultimo = null;
+        int fineDecennio = inizioDecennio + 9;
 
+        for (int i = 0; i < libriOrdinati.Count; i++)
+        {
+            int anno = libriOrdinati[i].AnnoPubblico;
 
+            if (anno >= inizioDecennio && anno <= fineDecennio)
+            {
+                if (primo == null)
+                    primo = libriOrdinati[i];
+
+                ultimo = libriOrdinati[i]; 
+            }
+        }
+
+        return primo != null; 
     }
-    */
 
+    public void InserisciAutoreInOrdine(ref List<Autore> autoriOrdinati, Autore nuovoAutore)
+    {
+        foreach (Autore a in autoriOrdinati)
+        {
+            if (string.Equals(a.NomeCompleto, nuovoAutore.NomeCompleto, StringComparison.OrdinalIgnoreCase))
+                return; 
+        }
+
+        
+        for (int i = 0; i < autoriOrdinati.Count; i++)
+        {
+            int cmp = string.Compare(
+                autoriOrdinati[i].NomeCompleto,
+                nuovoAutore.NomeCompleto,
+                StringComparison.OrdinalIgnoreCase);
+
+            if (cmp > 0) 
+            {
+                autoriOrdinati.Insert(i, nuovoAutore);
+                return;
+            }
+        }
+
+        autoriOrdinati.Add(nuovoAutore);
+    }
+
+    public void OrdinaPerAutore(List<Libro> libri, out List<Libro> ordinati)
+    {
+        ordinati = libri.OrderBy(l => l.NomeCompleto).ToList();
+    }
+
+    public void OrdinaPerAnno(List<Libro> Libri, out List<Libro> ordinati)
+    {
+        ordinati=Libri.OrderBy(a => a.AnnoPubblico).ToList();
+    }
     public void CercaAutore(
         List<Autore> autori,
         string autor,

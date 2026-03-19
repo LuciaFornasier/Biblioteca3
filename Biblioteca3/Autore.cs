@@ -66,7 +66,7 @@ public class Autore
 
     public List<Libro> Elenco
     {
-        get { return elenco; }
+        get { return  elenco; }
     }
 
     public DateOnly NascitaPubblica
@@ -81,7 +81,7 @@ public class Autore
 
     public string CognomePubblico
     {
-        get { return cognome; }j
+        get { return cognome; }
     }
 
     public override string ToString()
