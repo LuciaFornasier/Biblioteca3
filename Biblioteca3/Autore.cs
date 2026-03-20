@@ -72,7 +72,7 @@ public class Autore
     {
         get { return nascita; }
     }
-f
+
     public string NomePubblico
     {
         get { return nome; }
