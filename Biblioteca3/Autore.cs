@@ -63,7 +63,6 @@ public class Autore
     {
         set { nascita = DateOnly.FromDateTime(value > DateTime.Now ? DateTime.Now : value); }
     }
-
     public List<Libro> Elenco
     {
         get { return  elenco; }
@@ -73,7 +72,7 @@ public class Autore
     {
         get { return nascita; }
     }
-
+f
     public string NomePubblico
     {
         get { return nome; }

@@ -167,9 +167,9 @@ public class Biblioteca
     public void OrdinaPerTitolo(List<Libro> Libri, out List<Libro> ordina)
     {
         ordina = null;
-        ordina=libri.OrderBy(a => a.TitoloPubblico).ToList();
+        ordina = libri.OrderBy(a => a.TitoloPubblico).ToList();
         return;
-    }h
+    }
 
     public bool OttieniInfoAutore(string nomeAutore, List<Autore> autori, out int totLibri, out string ultimoTitolo)
     {
