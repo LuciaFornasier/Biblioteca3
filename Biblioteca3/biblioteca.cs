@@ -235,16 +235,9 @@ public class Biblioteca
 
         return primo != null; 
     }
-
-    public void InserisciAutoreInOrdine(ref List<Autore> autoriOrdinati, Autore nuovoAutore)
+    public void InserisciAutoreInOrdine(List<Autore> autori,out List<Autore> autoriOrdinati, Autore nuovoAutore)
     {
-        foreach (Autore a in autoriOrdinati)
-        {
-            if (string.Equals(a.NomeCompleto, nuovoAutore.NomeCompleto, StringComparison.OrdinalIgnoreCase))
-                return; 
-        }
-
-        
+       OrdinaPerNome( autori,out autoriOrdinati);
         for (int i = 0; i < autoriOrdinati.Count; i++)
         {
             int cmp = string.Compare(
@@ -262,9 +255,56 @@ public class Biblioteca
         autoriOrdinati.Add(nuovoAutore);
     }
 
+    public void TrovaLibroPiùVicino(List<Libro> libri,in int anno,out string libro)
+    {
+        OrdinaPerAnno(libri,out List<Libro> book);
+        libro = "";
+        
+        for(int i=0; i<book.Count; i++)
+        {
+            int differenza=anno - book[i].AnnoPubblico;
+            int dx = (i < book.Count - 1) ? book[i+1].AnnoPubblico : int.MaxValue;
+            int sx = (i > 0) ? book[i-1].AnnoPubblico : int.MinValue;
+            if (differenza == 0)
+            {
+                libro = book[i].NomeCompleto;
+            }
+            else if(differenza > 0 && anno> dx)
+            {
+                libro=book[i].NomeCompleto;
+                continue;
+            }
+            else if (differenza > 0 && anno < dx)
+            {
+                return;
+            }
+            else if (differenza < 0 && anno > sx)
+            {
+                return;
+            }
+            else
+            {
+                libro=book[i].NomeCompleto;
+                continue;
+            }
+                
+            
+            
+        }
+        return;
+        
+    }
+
+    
     public void OrdinaPerAutore(List<Libro> libri, out List<Libro> ordinati)
     {
         ordinati = libri.OrderBy(l => l.NomeCompleto).ToList();
+    }
+
+    public void OrdinaPerNome(in List<Autore> autori, out List<Autore> ordinata)
+    {
+       ordinata= autori.OrderBy(a => a.NomeCompleto, StringComparer.OrdinalIgnoreCase).ToList();
+       return;
     }
 
     public void OrdinaPerAnno(List<Libro> Libri, out List<Libro> ordinati)
@@ -279,9 +319,8 @@ public class Biblioteca
         autore = "";
 
         // La dicotomica richiede lista ordinata
-        List<Autore> ordinati = autori
-            .OrderBy(a => a.NomeCompleto, StringComparer.OrdinalIgnoreCase)
-            .ToList();
+        List<Autore> ordinati;
+        OrdinaPerNome(in autori, out ordinati);
 
         int sx = 0, dx = ordinati.Count - 1;
 
