@@ -25,7 +25,7 @@ foreach (var line in File.ReadAllLines("autori.csv").Skip(1))
     DateOnly nascita = DateOnly.MinValue;
     foreach (var part in parts)
     {
-        if (DateOnly.TryParseExact(part, "yyyyMMdd", out nascita))
+        if (DateOnly.TryParseExact(part, "ddMMYYYY", out nascita))
             break;
     }
 
