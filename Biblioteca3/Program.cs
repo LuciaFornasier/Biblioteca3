@@ -10,6 +10,7 @@ Console.WriteLine("Hello, World!");
 string nome = "Lucia";
 
 List<Autore> autori = new List<Autore>();
+
 List<Libro> libri = new List<Libro>();
 
 Biblioteca biblioteca;
@@ -20,14 +21,13 @@ foreach (var line in File.ReadAllLines("autori.csv").Skip(1))
     if (string.IsNullOrWhiteSpace(line)) continue;
 
     var parts = line.Split(';');
-
-    // trova automaticamente quale colonna è la data
-    DateOnly nascita = DateOnly.MinValue;
-    foreach (var part in parts)
-    {
-        if (DateOnly.TryParseExact(part, "ddMMYYYY", out nascita))
-            break;
-    }
+    
+    DateOnly nascita = DateOnly.ParseExact(
+        parts[2],
+        new[] { "dd-MM-yyyy", "d-M-yyyy", "d-MM-yyyy", "dd-M-yyyy" },
+        CultureInfo.InvariantCulture,
+        DateTimeStyles.None
+    );
 
     Autore a = new Autore(parts[1], parts[0], nascita);
     autori.Add(a);
@@ -72,9 +72,10 @@ foreach (var line in File.ReadAllLines("libri.csv").Skip(1))
 // Salva CSV auto
     using (StreamWriter sw = new StreamWriter("autori.csv"))
     {
+        sw.WriteLine("cognome;nome;nascita");
         foreach (var a in autori)
         {
-            sw.WriteLine($"{a.CognomePubblico};{a.NomePubblico};{a.NascitaPubblica:yyyyMMdd}");
+            sw.WriteLine($"{a.CognomePubblico};{a.NomePubblico};{a.NascitaPubblica:dd-MM-yyyy}");
         }
     }
 
@@ -94,3 +95,16 @@ Biblioteca b = Biblioteca.CaricaBiblioteca();
     b.CercaAutore(b.ElencoAutori.ToList(), "Harry", out string autore);
     if (autore != "")
         Console.WriteLine($"Autore: {autore}");
+
+    List<string> c= new List<string>();
+    foreach (Autore v in autori)
+    {
+        c.Add(v.DataENome);
+    }
+Console.WriteLine($"Gli autori:{string.Join(",",c)}");
+
+string path = Path.GetFullPath("autori.csv");
+Console.WriteLine($"Leggo da: {path}");
+Console.WriteLine("Contenuto:");
+foreach (var l in File.ReadAllLines(path))
+    Console.WriteLine(l);

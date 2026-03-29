@@ -83,6 +83,11 @@ public class Autore
         get { return cognome; }
     }
 
+    public string DataENome
+    {
+        get { return $"{nascita.ToString("yy-MM-dd")}{NomeCompleto}"; }
+    }
+
     public override string ToString()
     {
         return $"{nome} {cognome} {nascita} {string.Join(", ", elenco)}";
@@ -105,7 +110,7 @@ public class Autore
             List<string> dati = new List<string>();
             dati.Add(this.cognome);
             dati.Add(this.nome);
-            dati.Add(this.nascita.ToString("yyyyMMdd"));
+            dati.Add(this.nascita.ToString("dd-MM-yyyy"));
             dati.Add(Totlibri.ToString());
             return dati.ToArray();
         }
