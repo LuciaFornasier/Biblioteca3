@@ -1,40 +1,24 @@
-using biblioteca;
-
 namespace BIbliotecaForm;
-
-public partial class BibliotecaForm : Form
-{
-    public BibliotecaForm()
+    public partial class BibliotecaForm : Form
     {
-        InitializeComponent();
-        Biblioteca biblio = Biblioteca.CaricaBiblioteca();
-        this.Text = $"Biblioteca '{biblio.Nome}'";
-        foreach (Autore autore in biblio.ElencoAutori)
+        public BibliotecaForm()
         {
-            string[] labels = autore.DatiCSV; // Proprietà con tutti i dati per le colonne
-            ListViewItem item = new ListViewItem() { Text = labels[0], Tag = autore };
-            item.SubItems.AddRange(labels.Skip(1).ToArray()); // Array delle colonne rimanenti
-            ListViewAutori.Items.Add(item);
+            InitializeComponent();
         }
-    }
 
-  private void ListViewAutori_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void ListViewAutori_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            // logica per la selezione dell'autore
+            if (ListViewAutori.SelectedItems.Count > 0)
+            {
+                
+                ListViewItem item = ListViewAutori.SelectedItems[0];
+                string cognome = item.Text;
+                string nome = item.SubItems[1].Text;
+            }
         }
 
         private void Autore_Click(object sender, EventArgs e)
         {
-            // logica per il pulsante Nuovo Autore
-            if (ListViewAutori.SelectedItems.Count == 0)
-            {
-        
-            }
+            
         }
-
-
-}
-
-
-
-    
+    }

@@ -5,7 +5,8 @@ public class Libro
     private int anno;
     private int pagine;
     private float prezzo;
- 
+   
+
     public Libro()
     {
         titolo = "Specifica un titolo";

@@ -45,3 +45,4 @@ C:\Users\Utente\RiderProjects\Biblioteca\BIbliotecaForm\obj\Debug\net10.0-window
 C:\Users\Utente\RiderProjects\Biblioteca\BIbliotecaForm\obj\Debug\net10.0-windows\BIbliotecaForm.pdb
 C:\Users\Utente\RiderProjects\Biblioteca\BIbliotecaForm\obj\Debug\net10.0-windows\BIbliotecaForm.genruntimeconfig.cache
 C:\Users\Utente\RiderProjects\Biblioteca\BIbliotecaForm\obj\Debug\net10.0-windows\ref\BIbliotecaForm.dll
+C:\Users\Utente\RiderProjects\Biblioteca\BIbliotecaForm\obj\Debug\net10.0-windows\BIbliotecaForm.Autore.resources

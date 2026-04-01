@@ -12,4 +12,19 @@
       <ProjectReference Include="..\biblioteca3\Biblioteca.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Compile Update="Libri.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="creaLibro.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="CreaAutore.cs">
+        <SubType>Form</SubType>
+      </Compile>
+      <Compile Update="Bibliotecaf.cs">
+        <SubType>Form</SubType>
+      </Compile>
+    </ItemGroup>
+
 </Project>
