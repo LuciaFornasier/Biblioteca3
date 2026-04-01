@@ -27,19 +27,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Utente\\.nuget\\packages\\": {}
+    "C:\\Users\\14529993\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Utente\\RiderProjects\\Biblioteca\\BIbliotecaForm\\BIbliotecaForm.csproj",
+      "projectUniqueName": "C:\\Users\\14529993\\RiderProjects\\Biblioteca3\\BIbliotecaForm\\BIbliotecaForm.csproj",
       "projectName": "BIbliotecaForm",
-      "projectPath": "C:\\Users\\Utente\\RiderProjects\\Biblioteca\\BIbliotecaForm\\BIbliotecaForm.csproj",
-      "packagesPath": "C:\\Users\\Utente\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Utente\\RiderProjects\\Biblioteca\\BIbliotecaForm\\obj\\",
+      "projectPath": "C:\\Users\\14529993\\RiderProjects\\Biblioteca3\\BIbliotecaForm\\BIbliotecaForm.csproj",
+      "packagesPath": "C:\\Users\\14529993\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\14529993\\RiderProjects\\Biblioteca3\\BIbliotecaForm\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Utente\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\14529993\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -53,8 +58,8 @@
         "net10.0-windows7.0": {
           "targetAlias": "net10.0-windows",
           "projectReferences": {
-            "C:\\Users\\Utente\\RiderProjects\\Biblioteca\\biblioteca3\\Biblioteca.csproj": {
-              "projectPath": "C:\\Users\\Utente\\RiderProjects\\Biblioteca\\biblioteca3\\Biblioteca.csproj"
+            "C:\\Users\\14529993\\RiderProjects\\Biblioteca3\\biblioteca3\\Biblioteca.csproj": {
+              "projectPath": "C:\\Users\\14529993\\RiderProjects\\Biblioteca3\\biblioteca3\\Biblioteca.csproj"
             }
           }
         }
@@ -93,7 +98,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Users\\14529993\\.dotnet\\sdk\\10.0.103/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",
