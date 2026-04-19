@@ -6,6 +6,7 @@ public class Autore
     private string nome;
     private string cognome;
     private List<Libro> elenco;
+    private static int totaleAutori;
     
 
     public Autore(string nome, string cognome, DateOnly nascita,List<Libro> elenco, int totlibri)
@@ -14,7 +15,7 @@ public class Autore
         this.cognome = cognome;
         this.nascita = nascita;
         this.elenco = elenco;
-        
+        Autore.totaleAutori = totaleAutori;
     }
 
     public Autore()
@@ -23,6 +24,7 @@ public class Autore
         cognome = "Specifica un cognome";
         nascita = DateOnly.MinValue;
         elenco = new List<Libro>();
+        totaleAutori = 0;
         
     }
     public Autore(string nome, string cognome, DateOnly dateOnly)
@@ -115,6 +117,6 @@ public class Autore
             return dati.ToArray();
         }
     }
-
+    public static int TotaleAutori=> totaleAutori;
 
 }

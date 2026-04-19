@@ -5,6 +5,7 @@ public class Libro
     private int anno;
     private int pagine;
     private float prezzo;
+    private static int totalelibri;
    
 
     public Libro()
@@ -14,6 +15,7 @@ public class Libro
         anno = 0;
         pagine = 0;
         prezzo = 0.0f;
+        totalelibri = 0;
     }
  
     public Libro(string titolo, Autore autore, int anno, int pagine, float prezzo)
@@ -23,6 +25,7 @@ public class Libro
         this.anno = anno;
         this.pagine = pagine;
         this.prezzo = prezzo;
+        Libro.totalelibri = totalelibri;
     }
 
     public string getTitolo() { return titolo; }
@@ -43,4 +46,6 @@ public class Libro
     {
         get { return $"{titolo};{autore};{anno};{pagine}"; }
     }
+
+    public static int TotaleLibri=> totalelibri;
 }
