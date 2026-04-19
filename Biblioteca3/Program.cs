@@ -5,7 +5,6 @@ using System.Linq;
 using System.Globalization;
 using biblioteca;
 
-Console.WriteLine("Hello, World!");
 
 string nome = "Lucia";
 

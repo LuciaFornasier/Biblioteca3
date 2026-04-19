@@ -18,8 +18,8 @@ public partial class Bibliotecaf : Form
 
     private void button2_Click(object sender, EventArgs e)
     {
-        Autore form = new Autore(); 
-        form.Owner = this;
-        form.Show();
+        Autore forms = new Autore(); 
+        forms.Owner = this;
+        forms.Show();
     }
 }
